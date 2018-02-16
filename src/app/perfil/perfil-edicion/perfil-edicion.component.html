@@ -1,0 +1,55 @@
+<div class="row" >
+  <div class="col-xs-12">    
+    <form [formGroup]="form" (ngSubmit)="guardarEdicion()" >
+      <div class="row" [hidden]="true">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input type="text" id="id" class="form-control" name="id" required formControlName="resourceId">
+            </div>
+          </div>
+      </div>  
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" name="nombre" required formControlName="nombre">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <input type="text" id="direccion" class="form-control" name="direccion" required formControlName="direccion">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="urlImagen">Imagen URL</label>
+            <input type="text" id="urlImagen" class="form-control" name="fotoUrl" required formControlName="fotoUrl" #url>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <img [src]="url.value" class="img-responsive" width="250" height="250">
+        </div>
+      </div>
+
+
+      <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-success" [disabled]="form.invalid">Aceptar</button>
+            <button type="button" class="btn btn-danger" routerLink="/perfil">Cancelar</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

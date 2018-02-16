@@ -1,0 +1,9 @@
+<app-header *ngIf="loginService.estaLogeado()===1"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="cols-md-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<app-footer *ngIf="loginService.estaLogeado()===1"></app-footer>
